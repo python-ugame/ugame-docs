@@ -7,6 +7,8 @@ The most recent version of hardware for this project is µGame 10.
 µGame 10
 ========
 
+.. image:: images/ugame-10-info.png
+
 Hardware Specification
 ----------------------
 
