@@ -1,20 +1,7 @@
-.. µGame documentation master file, created by
-   sphinx-quickstart on Sat Jan 27 11:51:27 2018.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to µGame's documentation!
-=================================
+µGame
+*****
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+    :maxdepth: 2
+    project.rst
+    hardware.rst
