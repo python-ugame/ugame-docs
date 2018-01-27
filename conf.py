@@ -45,7 +45,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'µGame'
+project = u'uGame'
 copyright = u'2018, Radomir Dopieralski'
 author = u'Radomir Dopieralski'
 
