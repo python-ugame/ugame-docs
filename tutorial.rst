@@ -122,7 +122,7 @@ When you save this code, you will finally see something on the screen: a blue
 checkered background. That is because a new grid is by default displaying the
 first tile in the bank, and that is the blue tile, repeated 128 times.
 
-.. image:: images/ball-grid.gif
+.. image:: images/ball-grid.png
 
 The command that actually displayed it on the screen is `redner_block`. You are
 going to call it in your program at least once, at the beginning. Without any
@@ -164,7 +164,7 @@ the layers. This is important, otherwise it wouldn't be displayed. It also has
 to be in the list before the background, otherwise it wouldn't be visible.
 When you save this code, you should see our ball on the screen.
 
-.. image:: images/ball-sprite.gif
+.. image:: images/ball-sprite.png
 
 
 Animations
