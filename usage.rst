@@ -30,8 +30,8 @@ read-write — this has to happen before the USB connection is made, so the code
 that does that has to go into the special `boot.py` file. But since only one
 thing can have write access to the filesystem, that means you will no longer be
 able to write files through USB from your computer. `Detailed explanation is
-available from Adafruit
-tutorials.<https://learn.adafruit.com/cpu-temperature-logging-with-circuit-python/writing-to-the-filesystem>`_
+available from Adafruit tutorials.
+<https://learn.adafruit.com/cpu-temperature-logging-with-circuit-python/writing-to-the-filesystem>`_
 
 If you want to be able to save the player's progress, you can also use a small
 area of non-volatile memory available for that purpose through the `nvm`
@@ -46,7 +46,8 @@ the USB connection. You can use it to experiment with Python commands and
 explore the device, but it's also very useful for debugging, as you can see
 everything your program prints in there, and also the text of any exceptions
 raised. If your program doesn't work and you don't know why, it's best to first
-check the console for any messages. `This Adafruit tutorial explains how to access the console.<https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console>`_
+check the console for any messages. `This Adafruit tutorial explains how to access the console.
+<https://learn.adafruit.com/welcome-to-circuitpython/kattni-connecting-to-the-serial-console>`_
 
 
 Other Considerations
