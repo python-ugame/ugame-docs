@@ -38,6 +38,14 @@ somewhere, however, you will see an error printed on the console, telling you
 the line number where the error is. Correct it and save again, and the board
 will restart again and run your code.
 
+You won't find the Python files for those two libraries on your device, because
+they are included in the firmware directly. The first one, `ugame`, gives you
+access to all the hardware of your device: the display, the buttons, the audio
+output, the battery voltage, etc. The second one, `stage`, is a very basic game
+library, giving you an easy way to draw tiled maps and sprites on the screen.
+`There is complete documentation for that library, if you are curious.
+<circuitpython-stage.readthedocs.io>`_.
+
 Banks
 =====
 
