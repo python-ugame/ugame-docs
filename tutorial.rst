@@ -265,6 +265,56 @@ included::
 
     bank = stage.Bank.from_bmp16("ball.bmp")
     background = stage.Grid(bank)
+    ball1 = Ball(64, 0)
+    ball2 = Ball(0, 76)
+    ball3 = Ball(111, 64)
+    game = stage.Stage(ugame.display, 12)
+    sprites = [ball1, ball2, ball3]
+    game.layers = [ball1, ball2, ball3, background]
+    game.render_block()
+
+    while True:
+        for sprite in sprites:
+            sprite.update()
+        game.render_sprites(sprites)
+        game.tick()
+
+Now, the `__init__` method of our new class handles creating a new sprite and
+setting its initial parameters, and the extended `update` method handles the
+behavior. Of course you can have many different classes if you want to have
+different behaviors. The `super()` call is a way to call the original method of
+the `Sprite` class.
+
+
+Text
+====
+
+Often you will have to display some messages for the player. Whether it is the
+current score count, the character's dialogue or the traditional "game over".
+You can do it by using yet another kind of layer, the `Text` layer::
+
+    import ugame
+    import stage
+
+
+    class Ball(stage.Sprite):
+        def __init__(self, x, y):
+            super().__init__(bank, 1, x, y)
+            self.dx = 2
+            self.dy = 1
+
+        def update(self):
+            super().update()
+            self.set_frame(self.frame % 4 + 1)
+            self.move(self.x + self.dx, self.y + self.dy)
+            if not 0 < self.x < 112:
+                self.dx = -self.dx
+            if not 0 < self.y < 112:
+                self.dy = -self.dy
+
+
+    bank = stage.Bank.from_bmp16("ball.bmp")
+    background = stage.Grid(bank)
     text = stage.Text(12, 1)
     text.move(16, 60)
     text.text("Hello world!")
@@ -281,12 +331,6 @@ included::
             sprite.update()
         game.render_sprites(sprites)
         game.tick()
-
-Now, the `__init__` method of our new class handles creating a new sprite and
-setting its initial parameters, and the extended `update` method handles the
-behavior. Of course you can have many different classes if you want to have
-different behaviors. The `super()` call is a way to call the original method of
-the `Sprite` class.
 
 Conclusion
 ==========
