@@ -44,7 +44,7 @@ access to all the hardware of your device: the display, the buttons, the audio
 output, the battery voltage, etc. The second one, `stage`, is a very basic game
 library, giving you an easy way to draw tiled maps and sprites on the screen.
 `There is complete documentation for that library, if you are curious.
-<circuitpython-stage.readthedocs.io>`_.
+<http://circuitpython-stage.readthedocs.io>`_.
 
 Banks
 =====
