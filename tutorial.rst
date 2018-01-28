@@ -204,4 +204,92 @@ Movement
 ========
 
 Now let's try to move the ball from where it spins, and make it travel across
-the screen.
+the screen. To do that, we can use the `move` method of the sprite, just like
+we changed its frame::
+
+    import ugame
+    import stage
+
+    bank = stage.Bank.from_bmp16("ball.bmp")
+    background = stage.Grid(bank)
+    ball = stage.Sprite(bank, 1, 8, 8)
+    game = stage.Stage(ugame.display, 12)
+    game.layers = [ball, background]
+    game.render_block()
+
+    dx = 2
+    while True:
+        ball.update()
+        ball.set_frame(ball.frame % 4 + 1)
+        ball.move(ball.x + dx, ball.y)
+        if not 0 < ball.x < 112:
+            dx = -dx
+        game.render_sprites([ball])
+        game.tick()
+
+We had to add one more complication. The `update` method of the sprite saves
+its old position in a temporary memory, so that when we call `render_sprites`,
+both the old position of the sprite and the new one can be updated. If we
+didn't call it, we would have leftovers of the previous ball drawn on the
+screen. You can try it by commenting out that line.
+
+
+Multiple Balls
+==============
+
+Now, suppose we wanted to have more moving objects in our game. Obviously we
+need more sprites, and the code to move all those sprites. Putting it all in
+the main loop like we did so far may be a little bit too messy. So we can
+subclass the `Sprite` class, and create our dedicated sprites, with behavior
+included::
+
+    import ugame
+    import stage
+
+
+    class Ball(stage.Sprite):
+        def __init__(self, x, y):
+            super().__init__(bank, 1, x, y)
+            self.dx = 2
+            self.dy = 1
+
+        def update(self):
+            super().update()
+            self.set_frame(self.frame % 4 + 1)
+            self.move(self.x + self.dx, self.y + self.dy)
+            if not 0 < self.x < 112:
+                self.dx = -self.dx
+            if not 0 < self.y < 112:
+                self.dy = -self.dy
+
+
+    bank = stage.Bank.from_bmp16("ball.bmp")
+    background = stage.Grid(bank)
+    text = stage.Text(12, 1)
+    text.move(16, 60)
+    text.text("Hello world!")
+    ball1 = Ball(64, 0)
+    ball2 = Ball(0, 76)
+    ball3 = Ball(111, 64)
+    game = stage.Stage(ugame.display, 12)
+    sprites = [ball1, ball2, ball3]
+    game.layers = [text, ball1, ball2, ball3, background]
+    game.render_block()
+
+    while True:
+        for sprite in sprites:
+            sprite.update()
+        game.render_sprites(sprites)
+        game.tick()
+
+Now, the `__init__` method of our new class handles creating a new sprite and
+setting its initial parameters, and the extended `update` method handles the
+behavior. Of course you can have many different classes if you want to have
+different behaviors. The `super()` call is a way to call the original method of
+the `Sprite` class.
+
+Conclusion
+==========
+
+This is as far as we are going to go with this simple demo. Hopefully it will
+help you on your journey to becoming an experienced game developer!
