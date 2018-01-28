@@ -9,7 +9,7 @@ of the most important concepts that you will need to know.
 Clean Slate
 ===========
 
-We don't want anything to interfere in our tutorial, so lets start with making
+We don't want anything to interfere in our tutorial, so let's start with making
 sure that everybody is starting with the same state. There are probably some
 files on your µGame right now — perhaps a demo program it came with, perhaps
 the remnants of earlier experimentation. Please copy those files somewhere safe
@@ -129,10 +129,65 @@ other methods to only redraw parts of the screen — and we are going to do that
 later on, as it is much faster then redrawing the whole screen every time. But
 you need to draw it all at the beginning, so there we go.
 
-You are probably wondering what that number 12 is doing there. We will need it
-later, when we are actually doing any animations: this is the number of frames
-per second (FPS) that our game is going to run at. You might be used to playing
-games where you have 300 fps or more, but on this kind of hardware, 12 or 24 fps
-is pretty standard.
+.. note::
+    You are probably wondering what that number 12 is doing there. We will need
+    it later, when we are actually doing any animations: this is the number of
+    frames per second (FPS) that our game is going to run at. You might be used
+    to playing games where you have 300 fps or more, but on this kind of
+    hardware, 12 or 24 fps is pretty standard.
 
+Sprite
+======
 
+Let's display our ball now. We could create another grid, but instead let's try
+something new: a `Sprite`. Sprites are 16x16 images representing things in your
+game such as the player character, the monsters, the items, the bullets, the
+explosions, etc. Unlike grids, they can only display one image at a time, but
+you can change that image and move it around the screen easily. So let's modify
+our code to include a sprite::
+
+    import ugame
+    import stage
+
+    bank = stage.Bank.from_bmp16("ball.bmp")
+    background = stage.Grid(bank)
+    ball = stage.Sprite(bank, 1, 8, 8)
+    game = stage.Stage(ugame.display, 12)
+    game.layers = [ball, background]
+    game.render_block()
+
+The parameters you have to pass are the bank, the image from that bank, and the
+x and y coordinates of the sprite. You can also see that we added our sprite to
+the layers. This is important, otherwise it wouldn't be displayed. It also has
+to be in the list before the background, otherwise it wouldn't be visible.
+When you save this code, you should see our ball on the screen.
+
+Animations
+==========
+
+Now let's make that ball move. The simplest way to do it is by animating it —
+that is, making the sprite display a different image every frame. We can do
+that by adding a loop to our program::
+
+    import ugame
+    import stage
+
+    bank = stage.Bank.from_bmp16("ball.bmp")
+    background = stage.Grid(bank)
+    ball = stage.Sprite(bank, 1, 8, 8)
+    game = stage.Stage(ugame.display, 12)
+    game.layers = [ball, background]
+    game.render_block()
+
+    while True:
+        ball.set_frame(ball.frame % 4 + 1)
+        game.render_sprites([ball])
+        game.tick()
+
+If you are familiar with Python, you will know that `while True:` makes things
+be repeated over and over again infinitely. Now, `set_frame` will change the
+frame displayed by our sprite — we want it to go 1, 2, 3, 4, 1, 2, 3, 4, ...
+because we only have 4 frames of animation of the ball. The modulo operator `%`
+takes care of that. Next, we call `render_sprites` to re-draw our sprite on the
+screen, and then `tick()` will wait for the next frame, making sure there are
+exactly 12 of them per second, as we specified when we created the stage.
