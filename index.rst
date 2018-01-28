@@ -6,3 +6,4 @@
 
     project.rst
     hardware.rst
+    usage.rst
