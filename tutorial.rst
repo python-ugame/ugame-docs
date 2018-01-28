@@ -122,6 +122,8 @@ When you save this code, you will finally see something on the screen: a blue
 checkered background. That is because a new grid is by default displaying the
 first tile in the bank, and that is the blue tile, repeated 128 times.
 
+.. image:: images/ball-grid.gif
+
 The command that actually displayed it on the screen is `redner_block`. You are
 going to call it in your program at least once, at the beginning. Without any
 parameters it will simply redraw the whole screen. You can also use this and
@@ -162,11 +164,14 @@ the layers. This is important, otherwise it wouldn't be displayed. It also has
 to be in the list before the background, otherwise it wouldn't be visible.
 When you save this code, you should see our ball on the screen.
 
+.. image:: images/ball-sprite.gif
+
+
 Animations
 ==========
 
-Now let's make that ball move. The simplest way to do it is by animating it —
-that is, making the sprite display a different image every frame. We can do
+Now let's make that ball animated. The simplest way to do it is by spinning it
+— that is, making the sprite display a different image every frame. We can do
 that by adding a loop to our program::
 
     import ugame
@@ -191,3 +196,12 @@ because we only have 4 frames of animation of the ball. The modulo operator `%`
 takes care of that. Next, we call `render_sprites` to re-draw our sprite on the
 screen, and then `tick()` will wait for the next frame, making sure there are
 exactly 12 of them per second, as we specified when we created the stage.
+
+.. image:: images/ball-animation.gif
+
+
+Movement
+========
+
+Now let's try to move the ball from where it spins, and make it travel across
+the screen.
