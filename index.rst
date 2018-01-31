@@ -12,3 +12,4 @@ A small handheld game console programmable with Python.
     hardware.rst
     usage.rst
     tutorial.rst
+    limitations.rst
