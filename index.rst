@@ -9,6 +9,7 @@ A small handheld game console programmable with Python.
     :maxdepth: 2
 
     project.rst
+    assembly.rst
     hardware.rst
     usage.rst
     tutorial.rst
