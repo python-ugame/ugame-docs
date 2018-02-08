@@ -14,7 +14,7 @@ helper Python libraries included to make game development easier.
 
 There is also a number of games and demos available, including a tutorial
 contained in this documentation. Everything is kept in the `project's GitHub
-organization.<https://github.com/python-ugame>`
+organization. <https://github.com/python-ugame>`
 
 
 Licensing
@@ -50,11 +50,11 @@ Community and Support
 =====================
 
 For learning and help with CircuitPython itself, it's best to head to
-`Adafruit's Discord server<http://adafru.it/discord>` and ask on the
+`Adafruit's Discord server <http://adafru.it/discord>` and ask on the
 ``circuitpython`` channel.
 
 If you prefer a bit more old-school means of communication, there is also
-a ``##ugame`` IRC channel on `Freenode<http://freenode.net>`.
+a ``##ugame`` IRC channel on `Freenode <http://freenode.net>`.
 
 Please use the GitHub's issue tracker to report any bugs you find. Also, `the
 wiki <https://github.com/python-ugame/ugame-docs/wiki>` is available, so you can
