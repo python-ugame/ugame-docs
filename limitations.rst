@@ -60,7 +60,7 @@ The source code of your program is also taking up space, and as it grows, at
 some point it will exceed the limits of the device. You can postpone that
 moment a little by using a pre-compiled bytecode instead of plain-text source.
 You can download the ``mpy-cross`` utility from `CircuitPython releases page
-<https://github.com/adafruit/circuitpython/releases/tag/2.2.0>` and use it to
+<https://github.com/adafruit/circuitpython/releases/tag/2.2.0>`_ and use it to
 create a ``.mpy`` file that you can copy instead of the source, and that will
 use less memory.
 
