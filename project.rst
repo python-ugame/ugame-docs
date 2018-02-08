@@ -56,6 +56,6 @@ For learning and help with CircuitPython itself, it's best to head to
 If you prefer a bit more old-school means of communication, there is also
 a ``##ugame`` IRC channel on `Freenode<http://freenode.net>`.
 
-Please use the GitHub's issue tracker to report any bugs you find. Also, the
-wikis are enabled in the repositories, so you can use them to share any
-information you think would be useful.
+Please use the GitHub's issue tracker to report any bugs you find. Also, `the
+wiki<https://github.com/python-ugame/ugame-docs/wiki>` is available, so you can
+share any information you think would be useful.
