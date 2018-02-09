@@ -55,3 +55,38 @@ Other Considerations
 
 Generally speaking, µGame is a CircuitPython device, compatible with the
 Adafruit M0 boards, and behaves exactly the same as those boards.
+
+
+Troubleshooting
+===============
+
+
+Errors
+------
+
+If you have uploaded your program but it's not working, or works for some time
+then abruptly stops, you have probably hit an error. To see what the error is
+exactly, you need to access the serial console, as explained above, and then
+you will see what the error is and on which line of your program.
+
+
+Corrupted Filesystem
+--------------------
+
+It you unplug µGame from your computer while files are still being copied, it
+can happen that the filesystem gets corrupted. When that happens, the surest
+way to recover is to copy all the important files to a safe place on your
+computer and format the filesystem on the µGame. To make that easy, there is
+a special firmware that will do it for you.
+
+First, you need to download the `format.uf2
+<https://github.com/python-ugame/ugame-10-hardware/raw/master/firmware/format.uf2>`_
+and `firmware.uf2
+<https://github.com/python-ugame/ugame-10-hardware/raw/master/firmware/firmware.uf2>`_
+files. Once you have them, connect your µGame to your computer, and press the
+reset button twice, so that it switches into the bootloader mode. A disk called
+`TRINKETBOOT` should appear, with some files on it. When it does, copy the
+`firmware.uf2` file on it, and wait for the device to reset. Your flash is now
+formatted. Now press reset twice again, and this time copy the `firmware.uf2`
+file onto the disk, to get back to the CircuitPython firmware. When the device
+resets, you should see a brand new empty `CIRCUITPY` disk.
