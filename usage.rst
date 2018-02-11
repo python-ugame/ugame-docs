@@ -12,14 +12,15 @@ disk driver labeled "CIRCUITPY" appear. If you browse it, you will either see
 some demo program already there, or just an empty disk.
 
 You can put any files on that disk, but a few of them have a special meaning.
-A file called `main.py` will be executed every time the device is powered on or
-restarted. Any other `.py` and `.mpy` files that you save there will become
-available to be imported from `main.py` and used as libraries or programs.
+A file called ``main.py`` will be executed every time the device is powered on
+or restarted. Any other ``.py`` and ``.mpy`` files that you save there will
+become available to be imported from ``main.py`` and used as libraries or
+programs.
 
-You will also want to save some `.bmp` and `.wav` files to be used by your
+You will also want to save some ``.bmp`` and ``.wav`` files to be used by your
 game, and possibly also some text files with level definitions and the like.
 
-Finally, you will probably find a `boot_out.txt` file appearing on that disk
+Finally, you will probably find a ``boot_out.txt`` file appearing on that disk
 every time the device is restarted — it contains diagnostic information about
 the device and the firmware on it.
 
@@ -96,8 +97,8 @@ and `firmware.uf2
 <https://github.com/python-ugame/ugame-10-hardware/raw/master/firmware/firmware.uf2>`_
 files. Once you have them, connect your µGame to your computer, and press the
 reset button twice, so that it switches into the bootloader mode. A disk called
-`TRINKETBOOT` should appear, with some files on it. When it does, copy the
-`format.uf2` file on it, and wait for the device to reset. Your flash is now
-formatted. Now press reset twice again, and this time copy the `firmware.uf2`
+``TRINKETBOOT`` should appear, with some files on it. When it does, copy the
+``format.uf2`` file on it, and wait for the device to reset. Your flash is now
+formatted. Now press reset twice again, and this time copy the ``firmware.uf2``
 file onto the disk, to get back to the CircuitPython firmware. When the device
-resets, you should see a brand new empty `CIRCUITPY` disk.
+resets, you should see a brand new empty ``CIRCUITPY`` disk.
