@@ -25,14 +25,14 @@ the device and the firmware on it.
 
 .. note::
     Please remember to always "remove" or "unmount" the filesystem after
-    copying or editing any files, and before unpluggin or hard-resetting the
+    copying or editing any files before unpluggin or hard-resetting the
     device (the automatic soft-reset is fine). If you don't, and a writing
     operation gets interrupted, you might accidentally corrupt your filesystem
     and have problems with the files afterwards. If that happens, see further
     down this page for troubleshooting options.
 
 Writing Files
-=============
+-------------
 
 By default, the filesystem can be written to from your computer through the USB
 port, but is read-only for your program. In order to be able to write to the
@@ -62,7 +62,7 @@ check the console for any messages. `This Adafruit tutorial explains how to acce
 
 
 Other Considerations
-====================
+--------------------
 
 Generally speaking, µGame is a CircuitPython device, compatible with the
 Adafruit M0 boards, and behaves exactly the same as those boards.
