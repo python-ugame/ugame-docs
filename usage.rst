@@ -23,6 +23,17 @@ Finally, you will probably find a `boot_out.txt` file appearing on that disk
 every time the device is restarted — it contains diagnostic information about
 the device and the firmware on it.
 
+.. note::
+    Please remember to always "remove" or "unmount" the filesystem after
+    copying or editing any files, and before unpluggin or hard-resetting the
+    device (the automatic soft-reset is fine). If you don't, and a writing
+    operation gets interrupted, you might accidentally corrupt your filesystem
+    and have problems with the files afterwards. If that happens, see further
+    down this page for troubleshooting options.
+
+Writing Files
+=============
+
 By default, the filesystem can be written to from your computer through the USB
 port, but is read-only for your program. In order to be able to write to the
 files, or create new ones, you first have to re-mount the filesystem as
