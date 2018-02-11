@@ -86,7 +86,7 @@ and `firmware.uf2
 files. Once you have them, connect your µGame to your computer, and press the
 reset button twice, so that it switches into the bootloader mode. A disk called
 `TRINKETBOOT` should appear, with some files on it. When it does, copy the
-`firmware.uf2` file on it, and wait for the device to reset. Your flash is now
+`format.uf2` file on it, and wait for the device to reset. Your flash is now
 formatted. Now press reset twice again, and this time copy the `firmware.uf2`
 file onto the disk, to get back to the CircuitPython firmware. When the device
 resets, you should see a brand new empty `CIRCUITPY` disk.
