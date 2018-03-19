@@ -136,7 +136,7 @@ The command that actually displayed it on the screen is `redner_block`. You are
 going to call it in your program at least once, at the beginning. Without any
 parameters it will simply redraw the whole screen. You can also use this and
 other methods to only redraw parts of the screen — and we are going to do that
-later on, as it is much faster then redrawing the whole screen every time. But
+later on, as it is much faster than redrawing the whole screen every time. But
 you need to draw it all at the beginning, so there we go.
 
 .. note::
