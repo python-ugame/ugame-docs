@@ -132,7 +132,7 @@ first tile in the bank, and that is the blue tile, repeated 128 times.
 
 .. image:: images/ball-grid.png
 
-The command that actually displayed it on the screen is `redner_block`. You are
+The command that actually displayed it on the screen is `render_block`. You are
 going to call it in your program at least once, at the beginning. Without any
 parameters it will simply redraw the whole screen. You can also use this and
 other methods to only redraw parts of the screen — and we are going to do that
